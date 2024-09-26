@@ -1,13 +1,48 @@
 import { Component } from '@angular/core';
+import  { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+interface Article {
+  article: string,
+  title: string,
+  author: string,
+  content: string,
+  image?:string,
+  isPublished: boolean,
+  comment?: string
+};
 
 @Component({
   selector: 'app-article-component',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule],
+  template: `
+    <input type="text" [(ngModel)]= "article.comment">
+    <input type="submit">
+  `,
   templateUrl: './article-component.component.html',
   styleUrl: './article-component.component.scss'
 })
+
 export class ArticleComponentComponent {
-  title = "Pas d'idée de titre";
-  content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac dolor turpis. Integer sit amet lectus fringilla, dapibus massa et, tristique leo. Nunc sit amet fermentum ipsum. Phasellus a ornare nunc, quis ornare mauris. Vivamus suscipit ut odio a congue. Praesent eros dolor, vestibulum quis consectetur quis, dignissim non est. Nunc fermentum libero ligula, vitae auctor justo ullamcorper vitae. Ut pulvinar convallis purus, ut aliquam tortor. Nullam faucibus faucibus accumsan. Mauris non erat eu dui bibendum scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse consequat eu ligula eu accumsan. Cras et fringilla justo, vitae feugiat tellus.';
+  article = {
+  title: 'Titre de l\'article',
+  author: 'John Doe', 
+  content: 'Voici le contenu de l\'article.',
+  image: 'https://via.placeholder.com/350x150',
+  isPublished: true,
+  comment: ''
+  };
+  
+  publishedComment= false;
+  
+  showComment():any {
+    if (this.article.comment) {
+      this.publishedComment = true;
+    }
+  }
+
+  togglePublication(): void {
+    this.article.isPublished = !this.article.isPublished;
+  }
 }

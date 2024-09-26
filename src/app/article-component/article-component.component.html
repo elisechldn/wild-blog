@@ -1,5 +1,20 @@
-<div class = "card"><h1> {{ title }}</h1>
-    <p>
-        {{ content }}
-    </p>
+<div class = "card">
+    <div class="article-content">
+        <h1 class="article-title"> {{ article.title }}</h1>
+            <p>{{article.author}}</p>
+        <img [src]="article.image" alt="">
+            <p>
+                {{ article.content }}
+        </p>
+    </div>
+    <div class="comment-area">
+        <input type="text" [(ngModel)]= "article.comment">
+        <input type="submit"(click)= "showComment()">
+        <p [hidden]= "!publishedComment">{{ article.comment }}</p>
+    </div>
+    <div>
+        <!-- Condition entre les balises pour faire évoluer le texte au clic et l'adapter à la situation.
+            L'article ne se désaffiche pas pour l'heure. J'en ai marre de cette étape, j'y reviens ce soir. -->
+        <button (click)="togglePublication()">{{ article.isPublished ? 'Désafficher l\'article' : 'Afficher l\'article'}}</button>
+    </div>
 </div>
