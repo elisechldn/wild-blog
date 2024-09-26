@@ -3,13 +3,13 @@ import  { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 interface Article {
-  article: string,
   title: string,
   author: string,
   content: string,
   image?:string,
   isPublished: boolean,
-  comment?: string
+  comment?: string,
+  likes:number,
 };
 
 @Component({
@@ -25,24 +25,56 @@ interface Article {
 })
 
 export class ArticleComponentComponent {
-  article = {
-  title: 'Titre de l\'article',
-  author: 'John Doe', 
-  content: 'Voici le contenu de l\'article.',
-  image: 'https://via.placeholder.com/350x150',
-  isPublished: true,
-  comment: ''
-  };
+  articles: Article[] = [
+    { 
+    title: 'Angular 16: Les nouveautés', 
+    author: 'Alice', 
+    content: 'Les nouveautés d\'Angular 16 incluent...', 
+    image: 'https://via.placeholder.com/350x150',
+    isPublished: true, 
+    comment: '', 
+    likes: 120 
+    },
+  { 
+    title: 'Développer une API REST', 
+    author: 'Bob', 
+    content: 'Développer une API REST nécessite...', 
+    image: 'https://via.placeholder.com/350x150',
+    isPublished: false, 
+    comment: '', 
+    likes: 75 
+  },
+  { 
+    title: 'Pourquoi TypeScript est essentiel ?', 
+    author: 'Charlie', 
+    content: 'TypeScript apporte de la robustesse...', 
+    image: 'https://via.placeholder.com/350x150',
+    isPublished: true, 
+    comment: '', 
+    likes: 200 
+  },
+];
   
   publishedComment= false;
   
   showComment():any {
-    if (this.article.comment) {
-      this.publishedComment = true;
-    }
+    this.articles.forEach((article) => {
+      if (article.comment) {
+        this.publishedComment = true;
+      }
+    })
+
   }
 
-  togglePublication(): void {
-    this.article.isPublished = !this.article.isPublished;
+  togglePublication(i: number): void {
+    this.articles[i].isPublished = !this.articles[i].isPublished;
   }
+
+  /*updateFontSize(): void {
+    this.articles.forEach((article) => {
+      if (article.likes > 150) {
+
+      }
+    })
+  }*/
 }
