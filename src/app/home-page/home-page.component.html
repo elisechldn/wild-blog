@@ -1,0 +1,35 @@
+@for (article of articles; track $index) {
+    <div class = "card">
+        @if (article.isPublished) {
+        <div class="article-content">
+            <h1 class="article-title"> {{ article.title }}</h1>
+                <p>{{article.author}}</p>
+            <img [src]="article.image" alt="">
+                <p>
+                    {{ article.content }}
+                </p>
+        </div>
+        <div class="comment-area">
+            <input type="text" [(ngModel)]= "article.comment">
+            <input type="submit"(click)= "showComment()">
+            <p [hidden]= "!publishedComment">{{ article.comment }}</p>
+        </div>
+        <div class="comment-area">
+        </div>
+        <p [ngClass]=" {'popular-article' : article.likes > 100}"
+            >
+            {{ article.likes }}
+        </p>
+        <a [routerLink]="['/article/id, article.id']">Voir davantage</a>        
+    }
+        <div>
+            <!-- Condition entre les balises pour faire évoluer le texte au clic et l'adapter à la situation.
+                L'article ne se désaffiche pas pour l'heure. J'en ai marre de cette étape, j'y reviens ce soir. -->
+            <button (click)="togglePublication($index)">{{ article.isPublished ? 'Désafficher l\'article' : 'Afficher l\'article'}}</button>
+        </div>
+    </div>
+} @empty {
+    <div>
+        <p>Aucun article publié pour le moment.</p>
+    </div>
+}

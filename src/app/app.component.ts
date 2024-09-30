@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ArticleComponentComponent } from './article-component/article-component.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ArticleComponent } from './article-component/article-component.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ArticleComponentComponent],
+  imports: [RouterOutlet, HomePageComponent, ArticleComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
