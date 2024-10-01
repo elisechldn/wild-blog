@@ -1,23 +1,90 @@
 .form-contact {
-    display: flex;
-    flex-direction: column;
-}
+    max-width: 50vw; /* Largeur maximale en pourcentage de la largeur du viewport */
+    margin: 5vh auto; /* Centré verticalement et horizontalement avec des marges en fonction de la hauteur du viewport */
+    padding: 2rem; /* Utilisation de rem pour une meilleure adaptabilité */
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Ombre légère */
+    font-family: Arial, sans-serif;
+  }
+  
+  form fieldset {
+    border: none;
+    margin-bottom: 0.7rem; /* Espace entre les sections du formulaire */
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem; /* Taille de police adaptée */
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: #fff;
+  }
+  
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form textarea:focus {
+    border-color: #007bff; /* Couleur de bordure lorsqu'un champ est actif */
+    outline: none;
+  }
+  
+  form textarea {
+    resize: vertical;
+    min-height: 15vh; /* Hauteur minimale adaptée à la hauteur du viewport */
+  }
+  
+  form button[type="submit"],
+  form button[type="reset"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  form button[type="submit"]:hover,
+  form button[type="reset"]:hover {
+    background-color: #0056b3;
+  }
+  
+  form button[type="submit"] {
+    margin-bottom: 1rem;
+  }
 
-fieldset {
-    display: flex;
-    justify-content: space-around;
-}
-
-button {
-    border-radius: 15px;
-    width: 25vw;
-    padding: 8px;
-    margin: 0.5rem;
-    font-weight: 600;
-    /**color: azure;
-    background-color: green;**/
-}
-
-.notSubmitted {
-    display: hidden;
-}
+  form button[type="reset"] {
+    background-color: #f0ad4e;
+  }
+  
+  form button[type="reset"]:hover {
+    background-color: #ec971f;
+  }
+  
+  div span {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: -1rem;
+    display: block;
+  }
+  
+  div {
+    font-size: 1rem;
+    color: #333;
+  }
+  
