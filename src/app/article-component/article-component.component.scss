@@ -1,25 +1,40 @@
-.card {
-    padding: 2rem;
-    margin: 1rem;
-    width: 70%;
-    border: solid 1px lightgray;
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.article-content {
-    display:flex;
-    flex-direction: column;
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-.popular-article {
-    font-size: 1.5em;
-    text-shadow: 2px 2px 5px gray;
-    font-weight: bold;
-    color:purple;
+.article-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;    /* Centre verticalement */
+    height: 100vh;          /* La section prend toute la hauteur de la fenêtre */
+    background-color: #f4f4f4;
 }
 
-.like-area {
-    border-radius: 15px;
-    padding: 0.5rem 2rem 0.5rem 2rem;
-    position: absolute;
-    left: 50;
+article {
+    width: 60vw;           /* Largeur de l'article relative à la fenêtre (60% de la largeur) */
+    padding: 5vh 3vw;      /* Espacement interne de l'article : 5% de la hauteur et 3% de la largeur de la fenêtre */
+    background-color: white;
+    box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.1); /* Ombre relative à la taille de la fenêtre */
+    border-radius: 1vh;    /* Bordure arrondie */
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 2vh;    /* Espacement sous le titre en fonction de la hauteur de la fenêtre */
+    font-size: 3vh;        /* Taille du texte relative à la hauteur de la fenêtre */
+    color: #333;
+}
+
+p {
+    margin-bottom: 1.5vh;  /* Espacement sous les paragraphes */
+    font-size: 2vh;        /* Taille du texte */
+    color: #555;
 }

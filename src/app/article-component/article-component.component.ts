@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './article-component.component.scss'
 })
 
-export class ArticleComponent {
+export class ArticleComponentComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   articleId!: number;
   article?: Article;
@@ -71,10 +71,6 @@ export class ArticleComponent {
       }
     })
 
-  }
-
-  togglePublication(i: number): void {
-    this.articles[i].isPublished = !this.articles[i].isPublished;
   }
 
   /*updateFontSize(): void {

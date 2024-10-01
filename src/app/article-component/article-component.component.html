@@ -1,0 +1,16 @@
+@if(article) {
+    <section class ="article-container">
+    <article>
+        <h1> {{ article.title }}</h1>
+        <p>{{ article.content }}</p>
+        <!-- Cette partie est à garder pour le détail de l'article
+        <div class="comment-area">
+            <input type="text" [(ngModel)]= "article.comment">
+            <input type="submit" (click)= "showComment()">
+            <p [hidden]= "!publishedComment">{{ article.comment }}</p>
+    </div>
+ -->
+    </article>
+</section>
+
+}
