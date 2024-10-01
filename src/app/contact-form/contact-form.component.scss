@@ -1,0 +1,23 @@
+.form-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    border-radius: 15px;
+    width: 25vw;
+    padding: 8px;
+    margin: 0.5rem;
+    font-weight: 600;
+    /**color: azure;
+    background-color: green;**/
+}
+
+.notSubmitted {
+    display: hidden;
+}
