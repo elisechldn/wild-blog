@@ -1,4 +1,5 @@
 <section class="wrapper">
+    <a [routerLink]="['/signup']"> S'inscrire </a>
     @for (article of articles; track $index) {
         <div class = "card-container">
             @if (article.isPublished) {
