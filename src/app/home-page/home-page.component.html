@@ -1,6 +1,8 @@
 <section class="wrapper">
     <a [routerLink]="['/signup']"> S'inscrire </a>
-    @for (article of articles; track $index) {
+
+    @for (article of articlesToChild; track $index) {
+        <app-article-component [articlesParent]="articlesToChild"></app-article-component>
         <div class = "card-container">
             @if (article.isPublished) {
                 <div class="card-header">

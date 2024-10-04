@@ -14,6 +14,7 @@ export class SignUpFormComponent {
   formBuilder = inject(FormBuilder);
 
   signUpForm = this.formBuilder.group({
+    //Si un seul Validator, pas besoin de déclarer un tableau.
     username:['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
     passwords: this.formBuilder.group({

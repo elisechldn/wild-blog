@@ -12,6 +12,8 @@
         <!--Si le champ "username" du formulaire "SignUpForm" est invalide ET si le champ "username" a déjà été touché.-->
         @if (signUpForm.get('username')?.invalid && signUpForm.get('username')?.touched) {
             <div>
+                <!-- Le form.get() et le ternaire, pas obligatoire. 
+                Possible de : form.controls.username.errors[''] -->
                 @if (signUpForm.get('username')?.errors?.['required']) {
                     <span>Le nom d'utilisateur est requis.</span>
                 }

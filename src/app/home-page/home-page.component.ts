@@ -13,7 +13,8 @@ import { RouterLink } from '@angular/router';
 })
 
 export class HomePageComponent {
-  articles: Article[] = [
+
+  articlesToChild: Article[] = [
     { 
       id: 1,
       title: 'Angular 16: Les nouveautés', 
@@ -47,6 +48,6 @@ export class HomePageComponent {
 ];
 
   togglePublication(i: number): void {
-    this.articles[i].isPublished = !this.articles[i].isPublished;
+    this.articlesToChild[i].isPublished = !this.articlesToChild[i].isPublished;
   }
 }
