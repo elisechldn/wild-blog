@@ -3,30 +3,6 @@
 
     @for (article of articlesToChild; track $index) {
         <app-article-component [articlesParent]="articlesToChild"></app-article-component>
-        <div class = "card-container">
-            @if (article.isPublished) {
-                <div class="card-header">
-                    <img [src]="article.image" alt="">
-                </div>
-                <div class="card-body">
-                    <h1 class="article-title"> {{ article.title }}</h1>
-                    <address rel="author" class="article-author"> {{article.author}} </address>
-                    <p>
-                        {{ article.content }}
-                    </p>
-                    <a [routerLink]="['article/id', article.id]">Voir davantage</a>        
-                </div>
-                <br>
-                <p [ngClass]=" {'popular-article' : article.likes > 100}">
-                    {{ article.likes }}
-                </p>
-            }
-            <div>
-                <!-- Condition entre les balises pour faire évoluer le texte au clic et l'adapter à la situation.
-                    L'article ne se désaffiche pas pour l'heure. J'en ai marre de cette étape, j'y reviens ce soir. -->
-                <button (click)="togglePublication($index)">{{ article.isPublished ? 'Désafficher l\'article' : 'Afficher l\'article'}}</button>
-            </div>
-        </div>
     } @empty {
         <div>
             <p>Aucun article publié pour le moment.</p>

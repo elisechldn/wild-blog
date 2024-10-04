@@ -46,8 +46,4 @@ export class HomePageComponent {
       likes: 200 
   },
 ];
-
-  togglePublication(i: number): void {
-    this.articlesToChild[i].isPublished = !this.articlesToChild[i].isPublished;
-  }
 }

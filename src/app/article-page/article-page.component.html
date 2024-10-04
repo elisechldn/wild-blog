@@ -1,0 +1,26 @@
+@if (articlesParent) {
+<div class = "card-container">
+    @if (articlesParent.isPublished) {
+        <div class="card-header">
+            <img [src]="articlesParent.image" alt="">
+        </div>
+        <div class="card-body">
+            <h1 class="article-title"> {{ articlesParent.title }}</h1>
+            <address rel="author" class="article-author"> {{articlesParent.author}} </address>
+            <p>
+                {{ articlesParent.content }}
+            </p>
+            <a [routerLink]="['article/id', articlesParent.id]">Voir davantage</a>        
+        </div>
+        <br>
+        <p [ngClass]=" {'popular-article' : articlesParent.likes > 100}">
+            {{ articlesParent.likes }}
+        </p>
+    }
+    <div>
+        <!-- Condition entre les balises pour faire évoluer le texte au clic et l'adapter à la situation.
+            L'article ne se désaffiche pas pour l'heure. J'en ai marre de cette étape, j'y reviens ce soir. -->
+        <button (click)="togglePublication()">{{ articlesParent.isPublished ? 'Désafficher l\'article' : 'Afficher l\'article'}}</button>
+    </div>
+</div>
+}

@@ -1,11 +1,11 @@
-@for (let article of articlesParent; track article.id) {
     @if(articlesParent) {
+        @for (article of articlesParent; track $index) {
         <section class ="article-container">
         <article>
-            <h1> {{ articlesParent.title }} </h1>
-            <img [src]="articlesParent.image" alt="">
-            <address rel="author" class="article-author"> {{articlesParent.author}} </address>
-            <p>{{ articlesParent.content }}</p>
+            <h1> {{ article.title }} </h1>
+            <img [src]="article.image" alt="">
+            <address rel="author" class="article-author"> {{article.author}} </address>
+            <p>{{ article.content }}</p>
 
                 <!--
                 Cette partie est à garder pour le détail de l'article

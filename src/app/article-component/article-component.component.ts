@@ -18,30 +18,19 @@ import { CommonModule } from '@angular/common';
 
 export class ArticleComponentComponent {
 
-  @Input() articlesParent!: Article[];
 
   route: ActivatedRoute = inject(ActivatedRoute);
   articleId!: number;
-  article?: Article;
-
-  ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.articleId = Number(params.get('id'));
-
-      this.article = this.articlesParent.find((article) => article.id === this.articleId);
-    });
-  }
+  
+  @Input() articlesParent!: Article;
   
   publishedComment= false;
   
   showComment():any {
-    this.articlesParent.forEach((article) => {
-      if (article.comment) {
+      if (this.articlesParent.comment) {
         this.publishedComment = true;
       }
-    })
-
-  }
+    }
 
   /*updateFontSize(): void {
     this.articles.forEach((article) => {
