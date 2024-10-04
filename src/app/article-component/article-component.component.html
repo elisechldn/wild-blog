@@ -1,5 +1,4 @@
-    @if(articlesParent) {
-        @for (article of articlesParent; track $index) {
+    @if(article) {
         <section class ="article-container">
         <article>
             <h1> {{ article.title }} </h1>
@@ -15,7 +14,9 @@
                     <p [hidden]= "!publishedComment">{{ article.comment }}</p>
             </div>
             -->
+            <a class="article-link" [routerLink]="['/article', article.id]">Voir l'article</a>
+
         </article>
     </section>
-    }
+
 }

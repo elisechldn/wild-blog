@@ -1,16 +1,18 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Article } from '../models/article.model';
 import { RouterLink } from '@angular/router';
 import { CommonModule, NgClass } from '@angular/common';
+import { ArticleComponentComponent } from '../article-component/article-component.component';
 
 @Component({
   selector: 'app-article-page',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, NgClass, ArticleComponentComponent],
   templateUrl: './article-page.component.html',
   styleUrl: './article-page.component.scss'
 })
 export class ArticlePageComponent {
+
   @Input() articlesParent!: Article;
 
   /*ngOnInit() {
@@ -21,7 +23,7 @@ export class ArticlePageComponent {
     });
   }*/
 
-    togglePublication(i: number): void {
+    togglePublication(): void {
       this.articlesParent.isPublished = !this.articlesParent.isPublished;
     }
   
