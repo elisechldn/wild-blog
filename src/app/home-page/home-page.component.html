@@ -3,7 +3,6 @@
 
     @for (article of articles; track $index) {
         <app-article-component [article]="article"></app-article-component>
-
     } @empty {
         <div>
             <p>Aucun article publié pour le moment.</p>

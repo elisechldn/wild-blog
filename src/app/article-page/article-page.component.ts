@@ -7,11 +7,12 @@ import { ArticleComponentComponent } from '../article-component/article-componen
 @Component({
   selector: 'app-article-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, ArticleComponentComponent],
+  imports: [CommonModule, RouterLink, NgClass, ArticleComponentComponent],
   templateUrl: './article-page.component.html',
   styleUrl: './article-page.component.scss'
 })
 export class ArticlePageComponent {
+
   //Pas besoin de mettre un type Article [], car on décompose déjà l'objet ici.
   @Input() articlesParent!: Article;
 

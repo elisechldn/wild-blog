@@ -14,6 +14,9 @@
                     <p [hidden]= "!publishedComment">{{ article.comment }}</p>
             </div>
             -->
+            <a class="article-link" [routerLink]="['/article', article.id]">Voir l'article</a>
+
         </article>
-    </section>
-    }
+        </section>
+
+}
