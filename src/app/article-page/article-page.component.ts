@@ -13,6 +13,7 @@ import { ArticleComponentComponent } from '../article-component/article-componen
 })
 export class ArticlePageComponent {
 
+  //Pas besoin de mettre un type Article [], car on décompose déjà l'objet ici.
   @Input() articlesParent!: Article;
 
   /*ngOnInit() {
