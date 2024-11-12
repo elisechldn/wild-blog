@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
 
 export class HomePageComponent {
 
-  articlesToChild: Article[] = [
+  articles: Article[] = [
     { 
       id: 1,
       title: 'Angular 16: Les nouveautés', 

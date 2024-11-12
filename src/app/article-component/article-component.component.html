@@ -1,5 +1,4 @@
-    @if(articlesParent) {
-        @for (article of articlesParent; track $index) {
+    @if(article) {
         <section class ="article-container">
         <article>
             <h1> {{ article.title }} </h1>
@@ -18,4 +17,3 @@
         </article>
     </section>
     }
-}

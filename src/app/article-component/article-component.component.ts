@@ -1,13 +1,14 @@
 import { Component, inject, Input } from '@angular/core';
 import { Article } from '../models/article.model';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import  { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ArticlePageComponent } from '../article-page/article-page.component';
 
 @Component({
   selector: 'app-article-component',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
+  imports: [FormsModule, CommonModule, RouterLink, ArticlePageComponent],
   template: `
     <input type="text" [(ngModel)]= "article.comment">
     <input type="submit">
@@ -22,12 +23,12 @@ export class ArticleComponentComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   articleId!: number;
   
-  @Input() articlesParent!: Article;
+  @Input() article!: Article;
   
   publishedComment= false;
   
   showComment():any {
-      if (this.articlesParent.comment) {
+      if (this.article.comment) {
         this.publishedComment = true;
       }
     }
